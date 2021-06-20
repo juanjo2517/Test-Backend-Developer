@@ -18,6 +18,8 @@ def save_teams(data, page):
 
     # Si no existe se guarda, de lo contrario retorna el equipo seleccionado
     if not team:
+        print('Creando equipo...')
+        print(data['club']['name'])
         new_team = Team.objects.create(
             name=data['club']['name'],
             league=data['league']['name'],
@@ -27,7 +29,9 @@ def save_teams(data, page):
         is_new = True
         return new_team, is_new
     else:
-        team, is_new
+        print('Ya existe equipo...')
+        print(data['club']['name'])
+        return team, is_new
 
 
 def save_players(data, page, team):
@@ -56,7 +60,8 @@ def save_players(data, page, team):
             last_name = data['lastName'],
             position = data['position'],
             nacionality = data['nation']['name'],
-            team = team
+            team = team,
+            page_saved = page
         )
 
         is_new = True

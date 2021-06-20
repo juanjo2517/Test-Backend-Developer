@@ -9,6 +9,9 @@ class IntegrationServices(CuembyModel):
     already_integrated = models.BooleanField(default=False)
     start_integration = models.DateTimeField(auto_now=False, auto_now_add=False)
     finish_integration = models.DateTimeField(auto_now=False, auto_now_add=False)
+    num_teams = models.IntegerField(null=True)
+    num_players = models.IntegerField(null=True)
+    
     
     class Meta:
         db_table = "integration_services"

@@ -47,14 +47,15 @@ class FifaServices():
         array_teams_saved = []
         array_players_saved = []
 
-        for i in range(num_pages):
+        for i in range(1, num_pages):
             # Consultar API con iterador de paginado
-            self.connect_api(num_pages+1)
+            self.connect_api(i)
 
             fifa_players = self.data
 
             for player in fifa_players['items']:
                 # Guardar equipos
+                print(type(player))
                 team, is_new_team = save_teams(player, i)
 
                 if is_new_team:
