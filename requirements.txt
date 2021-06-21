@@ -21,3 +21,12 @@ certifi==2021.5.30
 idna==2.10
 requests==2.25.1
 urllib3==1.26.5
+
+# CORS
+django-cors-headers==3.7.0
+
+# Gunicorn
+gunicorn==20.1.0
+
+# Database URL
+dj-database-url==0.5.0
